@@ -39,6 +39,12 @@ module Piperun
         p.run
       end
     end
+
+    def watch
+      @pipelines.each do |p|
+        p.watch
+      end
+    end
   end
 end
 

@@ -1,4 +1,5 @@
 require 'tmpdir'
+require 'listen'
 
 module Piperun
   class Pipeline
@@ -66,6 +67,12 @@ module Piperun
       end
 
       return files
+    end
+
+    def watch
+      Listen.to(@src) do |modified, added, removed|
+        run
+      end.start
     end
   end
 end  

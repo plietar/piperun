@@ -16,6 +16,15 @@ Mercenary.program(:piperun) do |p|
     end
   end
 
+  p.command(:watch) do |c|
+    c.syntax "build"
+
+    c.action do |args, options|
+      (Piperun::Network.load "Pipeline.rb").watch
+      sleep
+    end
+  end
+
   p.default_command(:build)
 end
 
