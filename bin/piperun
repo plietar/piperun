@@ -21,7 +21,10 @@ Mercenary.program(:piperun) do |p|
 
     c.action do |args, options|
       (Piperun::Network.load "Pipeline.rb").watch
-      sleep
+      begin
+        sleep
+      rescue Interrupt
+      end
     end
   end
 
