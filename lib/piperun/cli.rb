@@ -10,13 +10,13 @@ module Piperun
 
     desc "build", "Build the project."
     def build
-      project = Piperun::Project.load "Pipeline.rb"
+      project = Piperun::Project.load "Pipefile.rb"
       project.run
     end
 
     desc "watch", "Watch the project"
     def watch
-      project = Piperun::Project.load "Pipeline.rb"
+      project = Piperun::Project.load "Pipefile.rb"
       project.run
       project.watch
     end
