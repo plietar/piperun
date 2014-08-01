@@ -19,12 +19,12 @@ module Piperun
         Piperun::logger.level = Logger::INFO
       end
 
-      network = Piperun::Network.load "Pipeline.rb"
+      project = Piperun::Project.load "Pipeline.rb"
 
       unless options[:watch]
-        network.run
+        project.run
       else
-        network.watch
+        project.watch
       end
     end
   end

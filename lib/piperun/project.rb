@@ -1,5 +1,5 @@
 module Piperun
-  class Network
+  class Project
     attr_reader :pipelines
 
     def initialize
