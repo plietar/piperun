@@ -1,31 +1,24 @@
 require 'piperun'
-require 'methadone'
+require 'thor'
 
 module Piperun
-  class CLI
-    include Methadone::Main
-    include Methadone::CLILogging
+  class CLI < Thor
+    #description "Process files with pipelines"
+    #version Piperun::VERSION
 
-    description "Process files with pipelines"
-    version Piperun::VERSION
+    default_task :build
 
-    on "-V", "--verbose", "Run verbosely"
-    on "--watch", ""
-
-    main do
-      if options[:verbose]
-        Piperun::logger.level = Logger::DEBUG
-      else
-        Piperun::logger.level = Logger::INFO
-      end
-
+    desc "build", "Build the project."
+    def build
       project = Piperun::Project.load "Pipeline.rb"
+      project.run
+    end
 
-      unless options[:watch]
-        project.run
-      else
-        project.watch
-      end
+    desc "watch", "Watch the project"
+    def watch
+      project = Piperun::Project.load "Pipeline.rb"
+      project.run
+      project.watch
     end
   end
 end

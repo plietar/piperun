@@ -13,14 +13,11 @@ describe Piperun::CLI do
   end
 
   def piperun(*args)
-    args.unshift("piperun")
-    ::ARGV.replace args
-    Piperun::CLI.go!
-  rescue SystemExit
+    Piperun::CLI.start args
   end
 
   context 'with no arguments' do
-    it 'runs the project' do
+    it 'builds the project' do
       project.should_receive(:run)
       piperun
     end
@@ -31,10 +28,15 @@ describe Piperun::CLI do
     end
   end
 
-  context "with a --watch argument" do
+  context "with a watch argument" do
+    it 'builds the project' do
+      project.should_receive(:run)
+      piperun "watch"
+    end
+
     it 'watches the project' do
       project.should_receive(:watch)
-      piperun "--watch"
+      piperun "watch"
     end
   end
 end
