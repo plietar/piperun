@@ -1,7 +1,8 @@
+require 'piperun/version'
+
 require 'piperun/network'
 require 'piperun/pipeline'
-require 'piperun/filter'
-require 'piperun/version'
+require 'piperun/filters'
 
 require 'methadone'
 
