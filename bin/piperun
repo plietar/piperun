@@ -1,33 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'piperun'
-require 'mercenary'
+require 'piperun/cli'
 
-Mercenary.program(:piperun) do |p|
-  p.version Piperun::VERSION
-  p.description "Process files with pipelines"
-  p.syntax "piperun <subcommand> [options]"
-
-  p.command(:build) do |c|
-    c.syntax "build"
-
-    c.action do |args, options|
-      (Piperun::Network.load "Pipeline.rb").run
-    end
-  end
-
-  p.command(:watch) do |c|
-    c.syntax "build"
-
-    c.action do |args, options|
-      (Piperun::Network.load "Pipeline.rb").watch
-      begin
-        sleep
-      rescue Interrupt
-      end
-    end
-  end
-
-  p.default_command(:build)
-end
+Piperun::CLI.go!()
 
