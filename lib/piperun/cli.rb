@@ -25,10 +25,6 @@ module Piperun
         network.run
       else
         network.watch
-        begin
-          sleep
-        rescue Interrupt
-        end
       end
     end
   end
