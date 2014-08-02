@@ -19,6 +19,11 @@ module Piperun
       project = Piperun::Project.load "Pipefile.rb"
       project.run
       project.watch
+
+      begin
+        Kernel.sleep
+      rescue Interrupt
+      end
     end
   end
 end

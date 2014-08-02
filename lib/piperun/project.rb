@@ -44,11 +44,6 @@ module Piperun
       @pipelines.each do |p|
         p.watch
       end
-
-      begin
-        sleep
-      rescue Interrupt
-      end
     end
   end
 end

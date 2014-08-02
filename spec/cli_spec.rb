@@ -10,6 +10,8 @@ describe Piperun::CLI do
     Piperun::Project.stub(:new).and_return(@project)
     Piperun::Project.stub(:build).and_return(@project)
     Piperun::Project.stub(:load).and_return(@project)
+
+    Kernel.stub :sleep
   end
 
   def piperun(*args)
@@ -36,6 +38,11 @@ describe Piperun::CLI do
 
     it 'watches the project' do
       project.should_receive(:watch)
+      piperun "watch"
+    end
+
+    it 'sleeps forever' do
+      Kernel.should_receive(:sleep)
       piperun "watch"
     end
   end
