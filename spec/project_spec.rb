@@ -1,5 +1,4 @@
 require 'piperun'
-require_relative 'spec_helper.rb'
 
 describe Piperun::Project do
   let(:project) { Piperun::Project.new }
