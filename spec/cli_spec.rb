@@ -1,15 +1,14 @@
 require 'piperun/cli'
 
 describe Piperun::CLI do
-  attr_reader :project
+  let(:project) { Piperun::Project.new }
 
   before do
-    @project = Piperun::Project.new
-    @project.stub(:run)
-    @project.stub(:watch)
-    Piperun::Project.stub(:new).and_return(@project)
-    Piperun::Project.stub(:build).and_return(@project)
-    Piperun::Project.stub(:load).and_return(@project)
+    project.stub(:run)
+    project.stub(:watch)
+    Piperun::Project.stub(:new).and_return(project)
+    Piperun::Project.stub(:build).and_return(project)
+    Piperun::Project.stub(:load).and_return(project)
 
     Kernel.stub :sleep
   end
