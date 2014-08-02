@@ -19,29 +19,29 @@ describe Piperun::CLI do
 
   context 'with no arguments' do
     it 'builds the project' do
-      project.should_receive(:run)
+      expect(project).to receive(:run)
       piperun
     end
 
     it 'doesn\'t watch the project' do
-      project.should_not_receive(:watch)
+      expect(project).to_not receive(:watch)
       piperun
     end
   end
 
   context "with a watch argument" do
     it 'builds the project' do
-      project.should_receive(:run)
+      expect(project).to receive(:run)
       piperun "watch"
     end
 
     it 'watches the project' do
-      project.should_receive(:watch)
+      expect(project).to receive(:watch)
       piperun "watch"
     end
 
     it 'sleeps forever' do
-      Kernel.should_receive(:sleep)
+      expect(Kernel).to receive(:sleep)
       piperun "watch"
     end
   end

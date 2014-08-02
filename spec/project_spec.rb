@@ -22,14 +22,14 @@ describe Piperun::Project do
   describe '#run' do
     it 'runs each pipeline' do
       pipelines.each do |p|
-        p.should_receive(:run)
+        expect(p).to receive(:run)
       end
       project.run
     end
 
     it 'doesn\'t watch the pipelines' do
       pipelines.each do |p|
-        p.should_not_receive(:watch)
+        expect(p).to_not receive(:watch)
       end
       project.run
     end
@@ -38,14 +38,14 @@ describe Piperun::Project do
   describe '#watch' do
     it 'doesn\'t run the pipelines' do
       pipelines.each do |p|
-        p.should_not_receive(:run)
+        expect(p).to_not receive(:run)
       end
       project.watch
     end
 
     it 'watches each pipelines' do
       pipelines.each do |p|
-        p.should_receive(:watch)
+        expect(p).to receive(:watch)
       end
       project.watch
     end
