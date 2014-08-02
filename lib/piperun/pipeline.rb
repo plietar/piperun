@@ -54,6 +54,7 @@ module Piperun
 
           if f == @filters.last
             dst = @dst
+            FileUtils.mkdir_p dst
           else
             dst = Dir.mktmpdir
           end
