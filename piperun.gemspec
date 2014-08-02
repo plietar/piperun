@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Piperun::VERSION
   spec.authors       = ["Paul Liétar"]
   spec.email         = ["paul@lietar.net"]
-  spec.description   = %q{Process files with pipelines}
+  spec.description   = %q{Process files using pipelines}
   spec.summary       = %q{Piperun}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/plietar/piperun"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
