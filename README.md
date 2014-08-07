@@ -62,6 +62,7 @@ The following filters are supported :
 - Sass / Scss
 - Browserify
 - YUI JS and CSS compressors
+- Typescript
 
 Feel free to make a PR to add some. Check out examples in `lib/piperun/filters/` to see how.
 
