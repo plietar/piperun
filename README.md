@@ -67,6 +67,7 @@ The following filters are supported :
 - Haml
 - Less
 - PSD to PNG
+- Stylus
 
 Feel free to make a PR to add some. Check out examples in `lib/piperun/filters/` to see how.
 

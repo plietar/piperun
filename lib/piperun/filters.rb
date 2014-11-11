@@ -38,6 +38,7 @@ require 'piperun/filters/match_filter'
 require 'piperun/filters/parallel_filter'
 require 'piperun/filters/psd_filter'
 require 'piperun/filters/sass_filter'
+require 'piperun/filters/stylus_filter'
 require 'piperun/filters/tar_filter'
 require 'piperun/filters/typescript_filter'
 require 'piperun/filters/gz_filter'
@@ -55,10 +56,10 @@ class Piperun::Pipeline::DSL
   add_filter :psd,        Piperun::Filters::PSDFilter
   add_filter :sass,       Piperun::Filters::SassFilter
   add_filter :scss,       Piperun::Filters::SassFilter
+  add_filter :stylus,     Piperun::Filters::StylusFilter
   add_filter :tar,        Piperun::Filters::TarFilter
   add_filter :typescript, Piperun::Filters::TypeScriptFilter
   add_filter :gz,         Piperun::Filters::GzFilter
   add_filter :yui_css,    Piperun::Filters::YuiCssFilter
   add_filter :yui_js,     Piperun::Filters::YuiJsFilter
 end
-
