@@ -66,6 +66,7 @@ The following filters are supported :
 - Jade
 - Haml
 - Less
+- PSD to PNG
 
 Feel free to make a PR to add some. Check out examples in `lib/piperun/filters/` to see how.
 

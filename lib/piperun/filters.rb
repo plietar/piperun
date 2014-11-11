@@ -36,6 +36,7 @@ require 'piperun/filters/jade_filter'
 require 'piperun/filters/less_filter'
 require 'piperun/filters/match_filter'
 require 'piperun/filters/parallel_filter'
+require 'piperun/filters/psd_filter'
 require 'piperun/filters/sass_filter'
 require 'piperun/filters/tar_filter'
 require 'piperun/filters/typescript_filter'
@@ -51,6 +52,7 @@ class Piperun::Pipeline::DSL
   add_filter :less,       Piperun::Filters::LessFilter
   add_filter :match,      Piperun::Filters::MatchFilter
   add_filter :parallel,   Piperun::Filters::ParallelFilter
+  add_filter :psd,        Piperun::Filters::PSDFilter
   add_filter :sass,       Piperun::Filters::SassFilter
   add_filter :scss,       Piperun::Filters::SassFilter
   add_filter :tar,        Piperun::Filters::TarFilter
