@@ -31,6 +31,7 @@ require 'piperun/filters/transform_filter'
 
 require 'piperun/filters/copy_filter'
 require 'piperun/filters/browserify_filter'
+require 'piperun/filters/haml_filter'
 require 'piperun/filters/jade_filter'
 require 'piperun/filters/match_filter'
 require 'piperun/filters/parallel_filter'
@@ -44,6 +45,7 @@ require 'piperun/filters/yui_js_filter'
 class Piperun::Pipeline::DSL
   add_filter :copy,       Piperun::Filters::CopyFilter
   add_filter :browserify, Piperun::Filters::BrowserifyFilter
+  add_filter :haml,       Piperun::Filters::HamlFilter
   add_filter :jade,       Piperun::Filters::JadeFilter
   add_filter :match,      Piperun::Filters::MatchFilter
   add_filter :parallel,   Piperun::Filters::ParallelFilter
