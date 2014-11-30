@@ -68,6 +68,7 @@ The following filters are supported :
 - Less
 - PSD to PNG
 - Stylus
+- CoffeeScript
 
 Feel free to make a PR to add some. Check out examples in `lib/piperun/filters/` to see how.
 

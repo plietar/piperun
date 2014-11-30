@@ -8,7 +8,7 @@ module Piperun::Filters
 
       require_dependencies!
     end
-    
+
     protected
     def external_dependencies
       return []
@@ -29,6 +29,7 @@ end
 
 require 'piperun/filters/transform_filter'
 
+require 'piperun/filters/coffeescript_filter'
 require 'piperun/filters/copy_filter'
 require 'piperun/filters/browserify_filter'
 require 'piperun/filters/haml_filter'
@@ -46,6 +47,7 @@ require 'piperun/filters/yui_css_filter'
 require 'piperun/filters/yui_js_filter'
 
 class Piperun::Pipeline::DSL
+  add_filter :coffee,     Piperun::Filters::CoffeeScriptFilter
   add_filter :copy,       Piperun::Filters::CopyFilter
   add_filter :browserify, Piperun::Filters::BrowserifyFilter
   add_filter :haml,       Piperun::Filters::HamlFilter
