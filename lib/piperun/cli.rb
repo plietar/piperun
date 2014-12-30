@@ -10,13 +10,17 @@ module Piperun
 
     desc "build", "Build the project."
     def build
-      project = Piperun::Project.load "Pipefile.rb"
+      filename = File.exist?("Pipefile") ? "Pipefile" : "Pipefile.rb"
+
+      project = Piperun::Project.load filename
       project.run
     end
 
     desc "watch", "Watch the project"
     def watch
-      project = Piperun::Project.load "Pipefile.rb"
+      filename = File.exist?("Pipefile") ? "Pipefile" : "Pipefile.rb"
+
+      project = Piperun::Project.load filename
       project.run
       project.watch
 
